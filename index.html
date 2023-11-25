@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEARPOINT</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="./Assets/img/favicon.ico">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <link rel="stylesheet" href="./Assets/css/phone.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <!-- icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- DARK MODE  -->
+    <!-- <script type="module" src="https://unpkg.com/dark-mode-toggle"></script> -->
+    <!-- <link rel="stylesheet" href="./Assets/css/style.css" media="{prefers-color-scheme:dark}">
+    <link rel="stylesheet" href="./Assets/css/dark.css" media="{prefers-color-scheme:light}"> -->
+    <audio id="myAudio">
+        <source src="./Assets/js/click.mp3" type="audio/mp3">
+    </audio>
+
+</head>
+
+<body onload="Loader()">
+    <div id="main">
+        <lottie-player id="lottie" class="lottie" src="https://assets3.lottiefiles.com/packages/lf20_Vwcw5D.json"
+            background="transparent" speed="1" autoplay loop></lottie-player>
+
+        <!-- up arrow button  -->
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><span class="material-symbols-outlined">
+                expand_less
+            </span></button>
+        <!-- Product add Toast  -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img style="height: 20px" src="./Assets/img/add.ico" class="rounded me-2" alt="Logo">
+                    <strong class="me-auto">Sportify</strong>
+                    <span style="padding: 4px 8px !important; font-size: 9px;"
+                        class="badge text-bg-success">Added</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Product added to your cart
+                </div>
+            </div>
+        </div>
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToastDelete" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img style="height: 20px" src="./Assets/img/remove.ico" class="rounded me-2" alt="Logo">
+                    <strong class="me-auto">Sportify</strong>
+                    <span style="padding: 4px 8px !important; font-size: 9px;"
+                        class="badge text-bg-danger">Removed</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Product removed from your cart
+                </div>
+            </div>
+        </div>
+        <!-- navbar -->
+        <div id="section-1">
+
+            <nav>
+                
+                <div class="logo">
+                    <a href="index.html"><img src="main-gearpoint-logo-.png" alt="logo"></a>
+                </div>
+
+                <ul class="nav-links">
+                    <a class="list" href="#homee">
+                        <li>Home</li>
+                    </a>
+                    <a class="list" href="#featuredd">
+                        <li>Products</li>
+                    </a>
+                    <a class="list" href="#bestseller">
+                        <li>Populars</li>
+                    </a>
+                    <a class="list" href="#categoryy">
+                        <li>Categories</li>
+                    </a>
+                    <a class="list" href="./Assets/Contact Us/contact _index.html">
+                        <li>Contact Us</li>
+                    </a>
+                </ul>
+                <ul class="nav-icons">
+                    <a class="list" href="#homee">
+                        <!-- <dark-mode-toggle id="dark-mode-toggle-1" appearance="toggle" dark="Dark" light="Light">
+                        </dark-mode-toggle> -->
+                        <li><img id="mode" style="height:36px ;" src="./Assets/img/moon.png" alt=""></li>
+
+                    </a>
+                    <a class="list" href="#">
+                        <li><span class="material-symbols-outlined">search</span></li>
+                    </a>
+                    <a class="list" href="./Assets/login/log.html">
+                        <li><span class="material-symbols-outlined">person</span></li>
+                    </a>
+                    <a class="list" target="_self" href="#">
+                        <li onclick="showCartPage()"><span class="material-symbols-outlined">shopping_bag<span
+                                    id="cartCount" class="badge rounded-pill badge-notification bg-danger"></span>
+                            </span>
+                        </li>
+                    </a>
+                </ul>
+            </nav>
+            <div id="hiddenCartPage">
+
+                <!-- hero -->
+                <div id="homee" class="hero-box container">
+                    <div class="hero-text">
+                        <h1>Get your <span class="hero-text-span"> Awesome </span><br>Sports Goodies!</h1>
+                        <p>We offer the best deals in our shop. Check them out now. We have awesome
+                            stuff on sale
+                            for
+                            you.
+                        </p>
+                        <button class="hero-btn">Shop Now</button>
+                    </div>
+                    <div class="hero-image">
+                        <img src="tshirt-new.png" alt="hero">
+                    </div>
+                </div>
+
+                <!-- featured products  -->
+
+                <section id="featuredd" class="container f-products">
+                    <div class="d-flex mb-3 f-product-head">
+                        <h1 class="fw-bolder">Featured Products</h1>
+                        <a class="fw-bolder" href="#categoryy" style="color: #FF3C78;">View All
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </a>
+                    </div>
+                    <!-- feature & top Products are here  -->
+                    <div id="topProducts" class="top-products d-flex flex-wrap justify-content-around"></div>
+                </section>
+                <hr class="container">
+                <!-- popolar in this week  -->
+                <section id="bestseller" class="f-products">
+                    <div class="d-flex align-items-center justify-content-between b-product-head">
+                        <h1 class="fw-bolder">Popular this week</h1>
+                        <div>
+                            <span class="m-1 fw-bold">Men</span>
+                            <label class="switch">
+                                <input id="toggleGender" onchange="displayNewShoes()" type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="m-1 fw-bold">Women</span>
+                        </div>
+                    </div>
+                    <!-- popular in this week are here  -->
+
+                    <div class="bestSeller mt-5 d-flex justify-content-between align-items-center">
+                        <div class="shoes-display" id="shoesDisplay">
+                            <img id="sellerShoes"
+                                src="https://user-images.githubusercontent.com/87645745/198192028-5775ca40-548c-4ea3-98fa-e1d8d80634c2.png"
+                                alt="men-shoes">
+                        </div>
+                        <div class="best-p-detail d-flex flex-column justify-content-center">
+                            <div class="rating">
+                                <i class="fa fa-star clicked"></i>
+                                <i class="fa fa-star clicked"></i>
+                                <i class="fa fa-star clicked"></i>
+                                <i class="fa fa-star clicked"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="top-p-text">
+                                <p id="bestSellerShoesText" class="top-p-name fw-bolder">Adidas Falcon Shoes for women -
+                                    2021
+                                    Edition (PINK)</p>
+                                <p class="top-p-price">Rs 2999</p>
+                            </div>
+                            <button id="shopNow" class="hero-btn">Shop Now</button>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- choose category   -->
+                <section id="categoryy" class="container cat-main-container">
+                    <div class="cat-head">
+                        <h1 id="cat-header" class="text-center fw-bolder">
+                            Choose categories
+                        </h1>
+                        <p id="cat-para" class="text-center w-50 m-auto">
+                            For explosive events (sprints up to 400 metres, long jump, triple jump) the reduction in
+                            atmospheric
+                            pressure means there is less resistance from the atmosphere.
+                        </p>
+                    </div>
+                    <div class="cat-box d-flex justify-content-evenly align-items-center">
+
+                        <div id="cat-1" class="cat">
+                            <h4 class="fw-bolder" style="color: #315BFF;">Men's <br> Collection</h4>
+                            <p>120 Products</p>
+                            <a class="fw-bold" href="./men.html" style="color: #FF3C78;">See
+                                collection</a>
+                            <img src="./Assets/img/Categories/Shoes.png" alt="categories">
+                            <div class="half-circle"></div>
+                        </div>
+                        <div id="cat-2" class="cat">
+                            <h4 class="fw-bolder" style="color: #FE7831;">Kid's <br> Collection</h4>
+                            <p>80 Products</p>
+                            <a class="fw-bold" href="./kids.html" style="color: #FE7831;">See
+                                collection</a>
+                            <img src="./Assets/img/Categories/Ball.png" alt="categories">
+                            <div class="half-circle"></div>
+                        </div>
+                        <div id="cat-3" class="cat">
+                            <h4 class="fw-bolder" style="color: #FF3C78;">Womens's <br> Collection</h4>
+                            <p>160 Products</p>
+                            <a class="fw-bold" href="./women.html" style="color: #FF3C78;">See
+                                collection</a>
+                            <img src="./Assets/img/Categories/Volly.png" alt="categories">
+                            <div class="half-circle"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section style="display: none;" id="cart-container" class="container">
+                <div class="cart-head mb-5">
+                    <h1 class="fw-bolder">Shopping Cart</h1>
+                </div>
+                <div class="cart-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="border-radius: 30px 0px 0px 30px;" scope="col">Product</th>
+                                <th scope="col">Quantity</th>
+                                <th style="border-radius: 0px 30px 30px 0px;" scope="col">SubTotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartBody">
+                            <tr id="emptyCart">
+                                <td colspan="3" class="text-center">
+                                    <img style="height: 500px;" src="./Assets/img/empty-cart.png" alt="empty-cart">
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                            <th class="cart-prod" scope="row">
+                                <img src="https://user-images.githubusercontent.com/87645745/197327637-25d6d8cb-c1de-4f9d-9a9c-27a8ad7c49f3.png"
+                                    alt="cart-product">
+                                <div class="cart-text">
+                                    <h5>Adidas Falcon Shoes for men - 2021 Edition</h5>
+                                    <h6>Price : $234.32</h6>
+                                    <span>Remove</span>
+                                </div>
+                            </th>
+                            <td>1</td>
+                            <td>$565.00</td>
+                        </tr> -->
+                        </tbody>
+                    </table>
+                    <hr class="container">
+                    <div id="checkout">
+                        <button id="clearCartBtn" onclick="clearCart()" class="hero-btn">Clear Cart</button>
+                        <div class="d-flex justify-content-between align-items-center m-5">
+                            <h4 class="fw-bolder">Total</h4>
+                            <h4 id="totalPrice" class="fw-bolder">$0.00</h4>
+                        </div>
+                        <button onclick="showAnimation()" id="checkoutBtn" class="hero-btn">Check out</button>
+                    </div>
+                </div>
+            </section>
+
+
+            <hr class="container">
+            <!-- footer start here  -->
+            <footer id="footer" class="container">
+                <div id="box1">
+                    <div class="footerLogo">
+                        <img src="Sports-Logo-Designss.png" alt="footer-logo">
+                    </div>
+                    <div class="footer-text">
+                        Our Shop is the best choice for buying sportswear.
+                    </div>
+                    <div class="footerSocialIcons">
+                        <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+                        <a href="https://twitter.com" class="fa fa-twitter"></a>
+                        <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+                        <a href="https://in.linkedin.com
+                        " class="fa fa-linkedin"></a>
+                        <a href="https://in.pinterest.com
+                        " class="fa fa-pinterest"></a>
+                    </div>
+                </div>
+                <div id="footer-Links" class="d-flex">
+                    <div id="box2" class="footerTextBox">
+                        <ul>
+                            <b>
+                                <li class="fs-5"><a href="#homee">Home</a></li>
+                            </b>
+                            <li>Support Center</li>
+                            <li>Customer Support</li>
+                            <li>Copyright</li>
+                            <li>Popular Campaign</li>
+                        </ul>
+                    </div>
+                    <div id="box3" class="footerTextBox">
+                        <ul>
+                            <b>
+                                <li class="fs-5"><a href="./Assets/Contact Us/contact _index.html">Our
+                                        Information</a>
+                            </b>
+                            <li>Return Policy</li>
+                            <li>Privacy Policy</li>
+                            <li>Terms and Condition</li>
+                            <li>Site Map</li>
+                            <li>Store Hours</li>
+                        </ul>
+                    </div>
+                    <div id="box4" class="footerTextBox">
+                        <ul>
+                            <b>
+                                <li class="fs-5"><a href="./Assets/Sign Up/Sign Up.html" target="_blank">My Account</a>
+                                </li>
+                            </b>
+                            <li>Press Inquiries</li>
+                            <li>Social Media Directories</li>
+                            <li>Permission</li>
+                            <li>Requests</li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+            <hr id="bottom-hr" class="container">
+            <div id="bottom-footer" class="container" style="margin: 3rem auto;">
+                © 2023 GearPoint
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+<script src="./Assets/js/app.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+</html>
