@@ -1,0 +1,44 @@
+{
+    "shoes": [
+        {
+            "id": 1,
+            "name": "Cricket Helmet",
+            "price": "Rs 1199",
+            "imgSrc": "https://i.pinimg.com/564x/0e/a3/f5/0ea3f5dfe8760d14d6361152d9b0da52.jpg",
+            "bgGradient": [
+                "#FE7831",
+                "#FFDEBE"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Shuttle Cock - 2019 Edition",
+            "price": "Rs 149",
+            "imgSrc": "https://i.pinimg.com/236x/5d/89/e4/5d89e4ace6e86a132f429d11730ba3c6.jpg",
+            "bgGradient": [
+                "#FF3C78",
+                "#FFB2B2"
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Hockey Stick",
+            "price": "Rs 1999",
+            "imgSrc": "https://i.pinimg.com/564x/50/40/77/50407757c079c7e8e9c397ec36bb978f.jpg",
+            "bgGradient": [
+                "#FF3C78",
+                "#FFB2B2"
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Tennis Balls - Set of 4",
+            "price": "Rs 149",
+            "imgSrc": "https://i.pinimg.com/736x/03/97/d9/0397d95b9833350ce691d071e81a31a4.jpg",
+            "bgGradient": [
+                "#8AA8F8",
+                "#315BFF"
+            ]
+        }
+    ]
+}
