@@ -14,7 +14,7 @@ form
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #0a6884;
+    background-color: #050505;
 
 }
 form::before
@@ -46,7 +46,7 @@ form::before
     top: 40px;
     width: 350px;
     height: calc(100% - 80px);
-    background: #0a6884;
+    background: #050505;
     z-index: 1;
     padding: 40px;
     display: flex;
@@ -215,7 +215,7 @@ form::before
     font-size:  12px;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #0a6884;
+    color: #050505;
     font-weight: 500;
 } 
 
@@ -338,3 +338,4 @@ form::before
         width: 100%;
     }
 }
+
